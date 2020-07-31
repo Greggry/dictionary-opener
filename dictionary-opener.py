@@ -1,7 +1,7 @@
 import os # os.system(cmd)
 import sys # sys.argv
 
-AVAILABLE_LANGUAGES = ['english', 'german']
+AVAILABLE_LANGUAGES = ['english', 'german', 'polish']
 
 if len(sys.argv) >= 3 and len(sys.argv) <= 4:
     
@@ -41,13 +41,17 @@ def askForPhrase(browser_name, language):
         return phrase
     
     print('looking up ' + str(phrase))
+    
     if language == 'german':
         os.system(BROWSER + ' https://www.collinsdictionary.com/dictionary/german-english/' + str(phrase))
     
     if language == 'english':
         os.system(BROWSER + ' https://www.oxfordlearnersdictionaries.com/definition/english/' + str(phrase) + '?q=' + str(phrase))
     
-    return phrase
+    if language == 'polish':
+        os.system(BROWSER + ' https://dictionary.cambridge.org/pl/dictionary/polish-english/' + str(phrase))
+        
+    return phrase # later we check for an empty string
 
 if CLOSE_METHOD == 'auto':
     print('Type a phrase in ' + LANG + ' to look up, the program will shut down by itself afterwards.')
