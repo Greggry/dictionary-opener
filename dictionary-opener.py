@@ -43,13 +43,13 @@ def askForPhrase(browser_name, language):
     print('looking up ' + str(phrase))
     
     if language == 'german':
-        os.system(BROWSER + ' https://www.collinsdictionary.com/dictionary/german-english/' + str(phrase))
+        os.system(BROWSER + ' "https://www.collinsdictionary.com/dictionary/german-english/' + str(phrase) + '"')
     
     if language == 'english':
-        os.system(BROWSER + ' https://www.oxfordlearnersdictionaries.com/definition/english/' + str(phrase) + '?q=' + str(phrase))
+        os.system(BROWSER + ' "https://www.oxfordlearnersdictionaries.com/definition/english/' + str(phrase) + '?q=' + str(phrase) + '"')
     
     if language == 'polish':
-        os.system(BROWSER + ' https://dictionary.cambridge.org/pl/dictionary/polish-english/' + str(phrase))
+        os.system(BROWSER + ' "https://dictionary.cambridge.org/pl/dictionary/polish-english/' + str(phrase) + '"')
         
     return phrase # later we check for an empty string
 
